@@ -8,12 +8,12 @@
   
   ### *sobel*
   
-    we have 2 selections:
+> we have 2 selections:
   
-    > 1. max   2.sum
+1. max   2.sum
 
   ### *kirsch*
   
-    > max
+>max
 
 
