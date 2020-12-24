@@ -1,0 +1,11 @@
+## 方法实现流程
+- 对于函数function [grad] = Filter_1(I,operator,option)，有三个输入参数：I、Operator、Option；
+- I是待处理的灰度图像。
+- Operator是选择算子，有两种选择，其中Operator为0时，选择sobel算子；Operator为1时，则用kirsch算子。
+- Option为选择sobel算子的不同方向分量滤波后的结果处理方式，如果其为0，则选择最大值做结果，option为1则用和做结果。
+- 创建sobel和kirsch算子时，首先建立二维矩阵，再将值赋入。
+- 最后选择最大值或和时，注意取绝对值：gradi = abs(gradi);  
+- 在demo1.m展示文件中调用Filter_1函数时，将其输入参数赋好值，如I2 = Filter_1(Img1, 0, 0);这样就可以将用sobel算子取最大值方式处理的结果赋给I2。
+- GUI设计采用编程工作流，界面菜单包括“文件”和“图像处理”两个选项，下面是四个图片展示区。
+- “文件”菜单下又有“打开”“导出”“退出”选项，通过修改[wenjianming,lujing]=uigetfile('*.tif');中的后缀可打开相应格式的图片。
+- “图像处理”菜单下又有“maxsobel”“sumsobel”“maxkirsch”选项，分别对图像进行不同算子的处理。
